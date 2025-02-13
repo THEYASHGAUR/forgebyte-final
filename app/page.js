@@ -1,7 +1,10 @@
-import Image from "next/image";
-import Footer from "./components/Footer";
-import Header from "./components/header";
-import WhatWeAreOffering from "./components/WhatWeAreOffering";
+'use client';
+
+import Image from 'next/image';
+import Footer from './components/Footer';
+import Header from './components/header';
+import WhatWeAreOffering from './components/WhatWeAreOffering';
+import Testimonials from './components/Testimonials';
 
 export default function Home() {
   return (
@@ -12,7 +15,7 @@ export default function Home() {
       <section className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-20 py-12 bg-[#f8f6f6]">
         <div className="lg:w-1/2 text-center lg:text-left">
           <h1 className="text-3xl lg:text-5xl font-bold text-gray-900">
-            We Don’t Just Go Big –{" "}
+            We Don’t Just Go Big –{' '}
             <span className="text-black">We Go Beyond.</span>
           </h1>
           <p className="mt-4 text-gray-600">
@@ -128,7 +131,6 @@ export default function Home() {
         </div> */}
       </section>
 
-
       {/* mobile demos */}
       <section className="flex flex-col items-center text-center px-6 lg:px-20 py-16">
         {/* Heading */}
@@ -152,18 +154,56 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* projects details */}
 
       {/* what we are offering */}
       <WhatWeAreOffering />
 
+      {/* testimonial section */}
+      <Testimonials />
 
+      {/* mission and vision */}
+      <section className="w-full flex flex-col items-center py-16">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-10">
+          Mission and Vision
+        </h2>
 
+        <div className="flex flex-col md:flex-row items-center gap-8 max-w-5xl">
+          {/* Left Side - Image */}
+          <div className="w-full md:w-1/2">
+            <img
+              src="/missionVision.png"
+              alt="Team working"
+              className="rounded-xl shadow-lg"
+            />
+          </div>
 
+          {/* Right Side - Mission & Vision */}
+          <div className="w-full md:w-1/2 flex flex-col gap-6">
+            <div className="bg-gray-100 p-5 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold text-gray-900">
+                Our Mission
+              </h3>
+              <p className="text-gray-700 mt-2">
+                Our journey from beginnings to breakthroughs has been fueled by
+                innovation, dedication, and an unyielding commitment to
+                excellence.
+              </p>
+            </div>
 
-
-
+            <div className="bg-gray-100 p-5 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold text-gray-900">
+                Our Vision
+              </h3>
+              <p className="text-gray-700 mt-2">
+                Our journey from beginnings to breakthroughs has been fueled by
+                innovation, dedication, and an unyielding commitment to
+                excellence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </>
