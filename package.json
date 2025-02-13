@@ -11,15 +11,9 @@
   "dependencies": {
     "lucide-react": "^0.475.0",
     "next": "15.1.6",
-<<<<<<< HEAD
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0"
-=======
-    "prettier": "^3.5.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
->>>>>>> 860a20636b2271a5f59365f3c968a76fcb8836a5
   },
   "devDependencies": {
     "postcss": "^8",
