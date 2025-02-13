@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Footer from './components/Footer';
-import Header from './components/header';
+import Header from './components/Header';
 import WhatWeAreOffering from './components/WhatWeAreOffering';
 import Testimonials from './components/Testimonials';
 
