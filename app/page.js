@@ -115,7 +115,7 @@ export default function Home() {
             Included in <span className="text-blue-600">ForgeByte</span>
           </h2>
           <p className="text-gray-600 mt-4 text-lg">
-            GrowStudio webflow template includes 10+ pages in total, with more
+            Forgebyte Solutions template includes 10+ pages in total, with more
             than 40+ sections and 1 different home page, and amazing features.
           </p>
           <button className="mt-6 px-6 py-3 bg-gray-900 text-white rounded-lg shadow-md hover:bg-gray-700 transition">
