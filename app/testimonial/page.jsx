@@ -6,7 +6,7 @@ import { Star, ThumbsUp } from 'lucide-react'
 const page = () => {
   return (
     <div>
-      <Header />
+      
       <div className='h-[682px] flex flex-col overflow-hidden gap-y-10 justify-center px-40 relative bg-[#031e2e]'>
         <div className='absolute -left-[400px] size-[711px] rounded-full bg-gradient-to-t from-[#041F3F] via-[#103B5B] to-[#194F6F] blur-lg backdrop-blur-lg' />
         <div className='absolute -bottom-1/4 -right-1/4 size-[711px] rounded-full bg-gradient-to-t from-[#041F3F] via-[#103B5B] to-[#194F6F] blur-lg backdrop-blur-lg' />

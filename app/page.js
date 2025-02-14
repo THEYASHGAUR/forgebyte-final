@@ -9,7 +9,7 @@ import Testimonials from './components/Testimonials';
 export default function Home() {
   return (
     <>
-      <Header />
+      
 
       {/*--------------------- hero section -------------------------- */}
       <section className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-20 py-12 bg-[#f8f6f6]">

@@ -83,7 +83,7 @@ const page = () => {
 
   return (
     <div>
-      <Header />
+      
       <div className="bg-gray-100 min-h-screen font-sans">
         {/* Hero Section */}
         <header className="bg-black text-white text-center py-36">
