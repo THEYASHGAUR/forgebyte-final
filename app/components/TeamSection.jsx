@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 const teamMembers = [
@@ -22,8 +24,8 @@ const TeamSection = () => {
   return (
     <section className="w-full py-12 text-center bg-gray-50 text-gray-900">
       {/* Title */}
-      <h1 className="text-2xl md:text-3xl font-bold mb-8">
-        Together we combine outstanding team
+      <h1 className="text-2xl md:text-5xl font-bold mb-8">
+        Together  we  combine  outstanding team
       </h1>
 
       {/* Team Members Grid */}
