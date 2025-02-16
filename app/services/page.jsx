@@ -29,28 +29,28 @@ const operationalBlueprint = [
   },
 
   {
-    id: 3,
-    icon: '/services_requirement.png', // Provide a valid image path
+    id: 2,
+    icon: '/create_prototype.png',
     title: 'Create Prototypes',
   },
   {
-    id: 4,
-    icon: '/services_requirement.png', // Provide a valid image path
+    id: 3,
+    icon: '/design.png',
     title: 'Design',
   },
   {
-    id: 5,
-    icon: '/services_requirement.png', // Provide a valid image path
+    id: 4,
+    icon: '/implementation.png',
     title: 'Coding/Implementation',
   },
   {
-    id: 6,
-    icon: '/services_requirement.png', // Provide a valid image path
+    id: 5,
+    icon: '/testing.png',
     title: 'Testing',
   },
   {
-    id: 7,
-    icon: '/services_requirement.png', // Provide a valid image path
+    id: 6,
+    icon: '/release.png',
     title: 'Release the final product',
   },
 ];
@@ -113,14 +113,14 @@ const Page = () => {
               The Operational Blueprint of Forgebyte
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 relative">
-              <div className='bg-green-200'>
+              
                 <button
                   className="absolute left-1 transform -translate-y-1/2 bg-gray-300 hover:bg-gray-400 p-2 rounded-full"
                   onClick={prevTestimonial}
                 >
                   <FaChevronLeft className="text-lg text-gray-800" />
                 </button>
-              </div>
+              
               {operationalBlueprint.map((item) => (
                 <div key={item.id} className="flex flex-col items-center">
                   <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
@@ -136,14 +136,14 @@ const Page = () => {
                   </p>
                 </div>
               ))}
-              <div className="bg-red-200 p-10">
+              
                 <button
                   className="absolute right-1 transform -translate-y-1/2 bg-gray-300 hover:bg-gray-400 p-2 rounded-full"
                   onClick={nextTestimonial}
                 >
                   <FaChevronRight className="text-lg text-gray-800" />
                 </button>
-              </div>
+              
             </div>
           </div>
         </section>
@@ -203,6 +203,42 @@ const Page = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* empowering serveral industries with our services  */}
+        <section className="w-full flex flex-col items-center py-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6 text-center">
+            Empowering Several Industries with Our Services
+          </h2>
+
+          <div className="max-w-4xl text-center text-gray-600 mb-10">
+            <p>
+              We never limit ourselves. Our best minds accept new challenges to
+              push their limits that make us different from others. We have
+              served clients from distinct industries with robust and powerful
+              apps that speak for the quality.
+            </p>
+            <p className="mt-4">
+              Now, it's your time to make a smart move and enhance your digital
+              product’s performance with our mobile application development
+              services.
+            </p>
+          </div>
+
+          {/* Industries List */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {industries.map((industry, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-3 bg-white shadow-lg rounded-lg px-5 py-3 hover:scale-105 transition-transform"
+              >
+                {industry.icon}
+                <span className="text-lg font-medium text-gray-800">
+                  {industry.name}
+                </span>
+              </div>
+            ))}
           </div>
         </section>
 

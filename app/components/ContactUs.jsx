@@ -29,7 +29,7 @@ const ContactUs = () => {
     }, []);
 
     return (
-        <section className='bg-[#f0fcff] min-h-screen flex flex-col lg:flex-row items-center p-5 lg:p-0'>
+        <section className='bg-[#AFDCD5] min-h-screen flex flex-col lg:flex-row items-center p-5 lg:p-0'>
             <div className='flex flex-col lg:w-1/2 gap-y-6 lg:pl-20 xl:pl-40 pt-10 text-center lg:text-left w-full'>            
                 <h1 className='text-4xl lg:text-6xl font-bold'>Contact Us</h1>
                 <p className='text-sm lg:text-base text-[#000000bf]'>
