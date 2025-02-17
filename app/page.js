@@ -6,11 +6,25 @@ import Header from './components/Header';
 import WhatWeAreOffering from './components/WhatWeAreOffering';
 import Testimonials from './components/Testimonials';
 
+import { useState, useEffect } from "react";
+
+const images = ["/mobile 1.png", "/mobile 2.png"]; 
+
 export default function Home() {
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // image slider
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // Change image every 5 seconds
+
+    return () => clearInterval(interval); // Cleanup interval
+  }, []);
+
   return (
     <>
-      
-
       {/*--------------------- hero section -------------------------- */}
       <section className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-20 py-12 bg-[#f8f6f6]">
         <div className="lg:w-1/2 text-center lg:text-left">
@@ -29,7 +43,7 @@ export default function Home() {
             <span className="font-bold text-2xl">3+</span> Clients
           </div>
         </div>
-        <div className="lg:w-1/2 mt-10 lg:mt-0">
+        <div className="lg:w-1/2 mt-10 lg:mt-0 flex  justify-center">
           <Image src="/hero_img.png" width={500} height={500} alt="hero" />
         </div>
       </section>
@@ -147,14 +161,12 @@ export default function Home() {
         {/* Mobile App Image */}
         <div className="mt-8 flex justify-center">
           <img
-            src="/mobile 1.png"
+            src={images[currentImageIndex]}
             alt="Mobile App UI"
-            className="w-60 md:w-72 lg:w-80 shadow-xl rounded-lg"
+            className="w-60 md:w-72 lg:w-80 shadow-xl rounded-lg transition-opacity duration-500"
           />
         </div>
       </section>
-
-      {/* projects details */}
 
       {/* what we are offering */}
       <WhatWeAreOffering />
