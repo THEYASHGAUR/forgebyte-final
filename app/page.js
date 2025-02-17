@@ -5,8 +5,30 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import WhatWeAreOffering from './components/WhatWeAreOffering';
 import Testimonials from './components/Testimonials';
-
 import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const testimonials = [
+  {
+    quote:
+      "Our journey from beginnings to breakthroughs has been fueled by innovation, dedication, and an unyielding commitment to excellence.",
+    author: "Trexo",
+    image: "/trexo_updated.png",
+
+  },
+  {
+    quote:
+      "Working with Forgebyte was a game-changer. Their expertise and commitment helped us scale rapidly and efficiently.",
+    author: "Yoom",
+    image:"/yoom_updated.png"
+  },
+  {
+    quote:
+      "Working with Forgebyte was a game-changer. Their expertise and commitment helped us scale rapidly and efficiently.",
+    author: "Fleetrr",
+    image:"/fleetr_enhanced.png"
+  },
+];
 
 const images = ["/mobile 1.png", "/mobile 2.png"]; 
 
@@ -22,6 +44,16 @@ export default function Home() {
 
     return () => clearInterval(interval); // Cleanup interval
   }, []);
+
+  const [index, setIndex] = useState(0);
+
+  const prevTestimonial = () => {
+    setIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1));
+  };
+
+  const nextTestimonial = () => {
+    setIndex((prevIndex) => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1));
+  };
 
   return (
     <>
@@ -145,28 +177,46 @@ export default function Home() {
         </div> */}
       </section>
 
-      {/* mobile demos */}
-      <section className="flex flex-col items-center text-center px-6 lg:px-20 py-16">
-        {/* Heading */}
-        <h2 className="text-2xl md:text-3xl font-bold">
-          We Are a House of Mobile App Development Services
-        </h2>
-        <p className="text-gray-600 mt-4 max-w-2xl">
-          After delivering dozens of successful projects under our belt,
-          ForgeByte is all set to offer tailor-made solutions to your business
-          needs. With us, you can access the best-in-class mobile app
-          development services and make your idea market-ready.
-        </p>
+      
 
-        {/* Mobile App Image */}
-        <div className="mt-8 flex justify-center">
-          <img
-            src={images[currentImageIndex]}
-            alt="Mobile App UI"
-            className="w-60 md:w-72 lg:w-80 shadow-xl rounded-lg transition-opacity duration-500"
-          />
-        </div>
-      </section>
+      {/* we have worked on various projects */}
+      <section className="max-w-6xl mx-auto px-6 py-12">
+          <h2 className="text-5xl font-bold text-center mb-6">
+            We have worked on various Projects
+          </h2>
+          <div className="flex p-10 w-full h-auto ">
+            <div className="bg-[#0a2539] text-white p-14  w-[400px] h-[400px]">
+              <h2 className="text-2xl font-bold mb-4">What our clients say about the projects</h2>
+              <p className="text-gray-300">{testimonials[index].quote}</p>
+              <p className="font-bold mt-2">~ {testimonials[index].author}</p>
+
+              <div className="mt-4 flex justify-center gap-4">
+                <button
+                  onClick={prevTestimonial}
+                  className="p-2 border rounded-full hover:bg-white hover:text-black transition"
+                >
+                  <ChevronLeft />
+                </button>
+                <button
+                  onClick={nextTestimonial}
+                  className="p-2 border rounded-full hover:bg-white hover:text-black transition"
+                >
+                  <ChevronRight />
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <Image
+                 src={testimonials[index].image}
+                 height={650}
+                 width={650}
+                 alt={testimonials[index].author}
+                 className="rounded-lg shadow-lg transition-all duration-500"
+              />
+            </div>
+          </div>
+        </section>
 
       {/* what we are offering */}
       <WhatWeAreOffering />

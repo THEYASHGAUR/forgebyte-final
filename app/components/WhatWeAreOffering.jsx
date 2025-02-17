@@ -43,7 +43,7 @@ const offerings = [
     icon: <FaMobile className="text-4xl text-[#0099FF]" />,
   },
   {
-    title: 'Web App Development',
+    title: 'SaaS App Development',
     description:
       'Get a scalable web application that can adapt to new market demands in the future, developed by our experts.',
     icon: <FaCubes className="text-4xl text-[#1D3E8A]" />,

@@ -28,12 +28,12 @@ const Footer = () => {
           <div className="flex items-center gap-2 mt-2">
             <FaPhone /> 
             <a href="tel:+919313693609" className="hover:underline">
-              +91 9313693609
+              +91 9319639609
             </a>
           </div>
           <div className="flex items-center gap-2 mt-2">
-            <FaMapMarkerAlt /> 
-            <p>123 Main Street, Anytown, USA, 2141</p>
+            {/* <FaMapMarkerAlt />  */}
+            {/* <p>123 Main Street, Anytown, USA, 2141</p> */}
           </div>
         </div>
 
@@ -67,7 +67,7 @@ const Footer = () => {
           <div>
             <h2 className="text-xl font-semibold mb-4">Other Pages</h2>
             <ul className="space-y-2">
-              {['Licenses', '404'].map((page) => (
+              {['Licenses', 'Policy'].map((page) => (
                 <li key={page} className="hover:underline cursor-pointer">
                   {page}
                 </li>

@@ -1,12 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import Header from '../components/Header';
 import Image from 'next/image';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import WhatWeAreOffering from '../components/WhatWeAreOffering';
 import { BriefcaseMedical, LineChart, Cpu, GraduationCap } from 'lucide-react';
 import Footer from '../components/Footer';
+import { useEffect } from 'react';
+
+const images = ['/mobile 1.png', '/mobile 2.png'];
 
 const industries = [
   {
@@ -62,21 +64,30 @@ const services = [
 ];
 
 const Page = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextTestimonial = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex + 1) % operationalBlueprint.length
-    );
-  };
+  const [index, setIndex] = useState(0);
 
   const prevTestimonial = () => {
-    setCurrentIndex(
-      (prevIndex) =>
-        (prevIndex - 1 + operationalBlueprint.length) %
-        operationalBlueprint.length
+    setIndex((prevIndex) =>
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
     );
   };
+
+  const nextTestimonial = () => {
+    setIndex((prevIndex) =>
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // image slider
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // Change image every 5 seconds
+
+    return () => clearInterval(interval); // Cleanup interval
+  }, []);
 
   return (
     <div>
@@ -113,14 +124,13 @@ const Page = () => {
               The Operational Blueprint of Forgebyte
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 relative">
-              
-                <button
-                  className="absolute left-1 transform -translate-y-1/2 bg-gray-300 hover:bg-gray-400 p-2 rounded-full"
-                  onClick={prevTestimonial}
-                >
-                  <FaChevronLeft className="text-lg text-gray-800" />
-                </button>
-              
+              <button
+                className="absolute left-1 transform -translate-y-1/2 bg-gray-300 hover:bg-gray-400 p-2 rounded-full"
+                onClick={prevTestimonial}
+              >
+                <FaChevronLeft className="text-lg text-gray-800" />
+              </button>
+
               {operationalBlueprint.map((item) => (
                 <div key={item.id} className="flex flex-col items-center">
                   <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
@@ -136,30 +146,36 @@ const Page = () => {
                   </p>
                 </div>
               ))}
-              
-                <button
-                  className="absolute right-1 transform -translate-y-1/2 bg-gray-300 hover:bg-gray-400 p-2 rounded-full"
-                  onClick={nextTestimonial}
-                >
-                  <FaChevronRight className="text-lg text-gray-800" />
-                </button>
-              
+
+              <button
+                className="absolute right-1 transform -translate-y-1/2 bg-gray-300 hover:bg-gray-400 p-2 rounded-full"
+                onClick={nextTestimonial}
+              >
+                <FaChevronRight className="text-lg text-gray-800" />
+              </button>
             </div>
           </div>
         </section>
 
-        {/* we have worked on various projects */}
-        <section className="max-w-6xl mx-auto px-6 py-12">
-          <h2 className="text-2xl font-bold text-center mb-6">
-            We have worked on various Projects
+        {/* mobile demos */}
+        <section className="flex flex-col items-center text-center px-6 lg:px-20 py-16">
+          {/* Heading */}
+          <h2 className="text-2xl md:text-3xl font-bold">
+            We Are a House of Mobile App Development Services
           </h2>
-          <div className="relative">
-            <Image
-              src="/home_testimonial.png"
-              width={800}
-              height={400}
-              alt="Projects"
-              className="rounded-lg shadow"
+          <p className="text-gray-600 mt-4 max-w-2xl">
+            After delivering dozens of successful projects under our belt,
+            ForgeByte is all set to offer tailor-made solutions to your business
+            needs. With us, you can access the best-in-class mobile app
+            development services and make your idea market-ready.
+          </p>
+
+          {/* Mobile App Image */}
+          <div className="mt-8 flex justify-center">
+            <img
+              src={images[currentImageIndex]}
+              alt="Mobile App UI"
+              className="w-60 md:w-72 lg:w-80 shadow-xl rounded-lg transition-opacity duration-500"
             />
           </div>
         </section>
