@@ -221,8 +221,7 @@ export default function Home() {
       {/* what we are offering */}
       <WhatWeAreOffering />
 
-      {/* testimonial section */}
-      <Testimonials />
+      
 
       {/* mission and vision */}
       <section className="w-full flex flex-col items-center py-16">

@@ -7,6 +7,7 @@ import WhatWeAreOffering from '../components/WhatWeAreOffering';
 import { BriefcaseMedical, LineChart, Cpu, GraduationCap } from 'lucide-react';
 import Footer from '../components/Footer';
 import { useEffect } from 'react';
+import Testimonials from '../components/Testimonials';
 
 const images = ['/mobile 1.png', '/mobile 2.png'];
 
@@ -257,6 +258,8 @@ const Page = () => {
             ))}
           </div>
         </section>
+
+        <Testimonials />
 
         <Footer />
       </div>

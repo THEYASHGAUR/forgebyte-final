@@ -8,7 +8,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="flex justify-between items-center p-4 lg:px-16 bg-white shadow-md">
+    <header className="flex justify-between items-center sticky z-10 top-0 left-0  p-4 lg:px-16 bg-white shadow-md">
       {/* Logo */}
       <div className="text-3xl font-bold flex items-center">
         <a href="/">
