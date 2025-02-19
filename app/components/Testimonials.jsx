@@ -57,7 +57,7 @@ const Testimonials = () => {
 
         {/* Right Panel (Testimonial) */}
         <div className="w-full sm:w-[60%] p-6 text-center relative">
-          <p className="text-gray-700 mt-4 text-lg">{testimonials[currentIndex].text}</p>
+          <p className="text-gray-700 mt-4 p-10 text-lg">{testimonials[currentIndex].text}</p>
           <p className="mt-3 font-semibold text-gray-900">~ {testimonials[currentIndex].name}</p>
 
           {/* Navigation Buttons */}

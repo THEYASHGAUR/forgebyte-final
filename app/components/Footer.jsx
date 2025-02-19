@@ -13,7 +13,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-200 text-black py-10 px-6 lg:px-20">
+    <footer className="bg-[#f3f4f6] text-black py-10 px-6 lg:px-20">
       <div className="flex flex-wrap lg:flex-nowrap justify-between gap-6">
         {/* Contact Info */}
         <div className="w-full sm:w-auto">
@@ -48,7 +48,6 @@ const Footer = () => {
                 'Home',
                 'About',
                 'Services',
-                'Projects',
                 'Testimonial',
                 'Contact',
               ].map((item) => (
@@ -90,7 +89,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between border-t-[1px] mt-3">
+      <div className="flex items-center justify-between border-t-[1px] border-black mt-3">
         <div className="flex justify-center space-x-4 mt-4">
           <FaFacebook className="text-xl cursor-pointer hover:text-blue-400" />
           <FaTwitter className="text-xl cursor-pointer hover:text-blue-300" />

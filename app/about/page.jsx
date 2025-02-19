@@ -4,12 +4,8 @@ import Image from 'next/image';
 import HeroSection from '../components/HeroSection';
 import TeamSection from '../components/TeamSection';
 import Footer from '../components/Footer';
+import TopNotch from '../components/TopNotch';
 
-const services = [
-  'A certified team of developers to work on your project',
-  'Daily reporting or project updates shared with clients',
-  'Multiple communication channels for effective communication',
-];
 
 const page = () => {
   return (
@@ -92,36 +88,7 @@ const page = () => {
       </section>
 
       {/* our services are top notch */}
-      <section className="w-full flex flex-col items-center py-16">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-10 text-center">
-          Our services are Top Notch
-        </h2>
-
-        <div className="flex flex-col md:flex-row items-center gap-8 max-w-5xl">
-          {/* Left Side - Image */}
-          <div className="w-full md:w-1/2">
-            <Image
-              src="/missionVision.png"
-              height={350}
-              width={350}
-              alt="Team working"
-              className="rounded-xl shadow-lg"
-            />
-          </div>
-
-          {/* Right Side - Services List */}
-          <div className="w-full md:w-1/2 flex flex-col gap-4">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-gray-100 p-5 mx-3 rounded-lg shadow-md text-gray-800"
-              >
-                {service}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TopNotch />
 
       {/* success stats */}
       <section className="w-full py-12 bg-blue-50 text-gray-900 text-center">

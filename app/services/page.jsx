@@ -1,13 +1,14 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import Image from 'next/image';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import WhatWeAreOffering from '../components/WhatWeAreOffering';
 import { BriefcaseMedical, LineChart, Cpu, GraduationCap } from 'lucide-react';
 import Footer from '../components/Footer';
-import { useEffect } from 'react';
 import Testimonials from '../components/Testimonials';
+import TopNotch from '../components/TopNotch';
+import OperationalBlueprintSlider from '../components/OperationalBlueprintSlider';
 
 const images = ['/mobile 1.png', '/mobile 2.png'];
 
@@ -24,68 +25,17 @@ const industries = [
   },
 ];
 
-const operationalBlueprint = [
-  {
-    id: 1,
-    icon: '/services_requirement.png',
-    title: 'Requirement Analysis',
-  },
-
-  {
-    id: 2,
-    icon: '/create_prototype.png',
-    title: 'Create Prototypes',
-  },
-  {
-    id: 3,
-    icon: '/design.png',
-    title: 'Design',
-  },
-  {
-    id: 4,
-    icon: '/implementation.png',
-    title: 'Coding/Implementation',
-  },
-  {
-    id: 5,
-    icon: '/testing.png',
-    title: 'Testing',
-  },
-  {
-    id: 6,
-    icon: '/release.png',
-    title: 'Release the final product',
-  },
-];
-
-const services = [
-  'A certified team of developers to work on your project',
-  'Daily reporting or project updates shared with clients',
-  'Multiple communication channels for effective communication',
-];
 
 const Page = () => {
   const [index, setIndex] = useState(0);
 
-  const prevTestimonial = () => {
-    setIndex((prevIndex) =>
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-    );
-  };
-
-  const nextTestimonial = () => {
-    setIndex((prevIndex) =>
-      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // image slider
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Change image every 5 seconds
+    }, 3000); // Change image every 3 seconds
 
     return () => clearInterval(interval); // Cleanup interval
   }, []);
@@ -94,9 +44,10 @@ const Page = () => {
     <div>
       <div className="bg-gray-100 min-h-screen font-sans">
         <header className="bg-black text-white text-center py-36">
-          <h1 className="text-5xl font-bold">FORGEBYTE</h1>
+          <h1 className="text-8xl font-bold">FORGEBYTE</h1>
         </header>
 
+        {/* turning vision into reality */}
         <section className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-8">
           <div>
             <h2 className="text-2xl font-bold text-[#1f2937]">
@@ -118,45 +69,9 @@ const Page = () => {
           </div>
         </section>
 
-        {/* Process Section */}
-        <section className="bg-white py-12">
-          <div className="max-w-6xl mx-auto px-6 text-center">
-            <h2 className="text-2xl text-[#1f2937] font-bold mb-6">
-              The Operational Blueprint of Forgebyte
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 relative">
-              <button
-                className="absolute left-1 transform -translate-y-1/2 bg-gray-300 hover:bg-gray-400 p-2 rounded-full"
-                onClick={prevTestimonial}
-              >
-                <FaChevronLeft className="text-lg text-gray-800" />
-              </button>
-
-              {operationalBlueprint.map((item) => (
-                <div key={item.id} className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
-                    <Image
-                      src={item.icon}
-                      width={50}
-                      height={50}
-                      alt={item.title}
-                    />
-                  </div>
-                  <p className="mt-4 font-semibold text-gray-900">
-                    {item.title}
-                  </p>
-                </div>
-              ))}
-
-              <button
-                className="absolute right-1 transform -translate-y-1/2 bg-gray-300 hover:bg-gray-400 p-2 rounded-full"
-                onClick={nextTestimonial}
-              >
-                <FaChevronRight className="text-lg text-gray-800" />
-              </button>
-            </div>
-          </div>
-        </section>
+        {/* Operational blueprint Section */}
+        
+        <OperationalBlueprintSlider />
 
         {/* mobile demos */}
         <section className="flex flex-col items-center text-center px-6 lg:px-20 py-16">
@@ -194,34 +109,7 @@ const Page = () => {
         </div>
 
         {/* our services are top notch */}
-        <section className="w-full flex flex-col items-center py-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-10 text-center">
-            Our services are Top Notch
-          </h2>
-
-          <div className="flex flex-col md:flex-row items-center gap-8 max-w-5xl">
-            <div className="w-full md:w-1/2">
-              <Image
-                src="/missionVision.png"
-                height={350}
-                width={350}
-                alt="Team working"
-                className="rounded-xl shadow-lg"
-              />
-            </div>
-
-            <div className="w-full md:w-1/2 flex flex-col gap-4">
-              {services.map((service, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-100 p-5 rounded-lg shadow-md text-gray-800"
-                >
-                  {service}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <TopNotch />
 
         {/* empowering serveral industries with our services  */}
         <section className="w-full flex flex-col items-center py-16">
