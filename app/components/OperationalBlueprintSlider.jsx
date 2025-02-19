@@ -47,7 +47,7 @@ const OperationalBlueprintSlider = () => {
             </button>
 
             {/* Image Slider */}
-            <div className="flex overflow-hidden gap-6">
+            <div className="flex overflow-hidden gap-6 px-10 ">
               {operationalBlueprint
                 .slice(startIndex, startIndex + itemsToShow)
                 .map((item) => (
