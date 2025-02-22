@@ -50,12 +50,12 @@ const offerings = [
   },
 ];
 
-const WhatWeAreOffering = () => {
+const WhatWeAreOffering = ({ref, visible}) => {
   return (
-    <section className="py-16 px-6 lg:px-20 text-center flex-col justify-center">
+    <section ref={ref} id="fourth-section" className={`py-16 px-6 lg:px-20 text-center flex-col justify-center ${visible ? 'opacity-100' : 'opacity-0'}`}>
       {/* Title Section */}
-      <h3 className="text-lg text-gray-600">Services</h3>
-      <h2 className="text-3xl font-bold text-gray-900 mt-1">
+      <h3 className={`text-lg text-gray-600 ${visible ? 'opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.2s]' : ''}`}>Services</h3>
+      <h2 className={`text-3xl font-bold text-gray-900 mt-1 ${visible ? 'opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.3s]' : ''}`}>
         What we are offering
       </h2>
 
@@ -65,7 +65,7 @@ const WhatWeAreOffering = () => {
           {offerings.map((offer, index) => (
             <div
               key={index}
-              className="bg-white lg:w-[400px] shadow-lg rounded-xl p-6 flex flex-col gap-4 transition-all hover:shadow-2xl"
+              className={`bg-white lg:w-[400px] shadow-lg rounded-xl p-6 flex flex-col gap-4 transition-all hover:shadow-2xl ${visible ? `opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.${index + 1}s]` : 'opacity-0'}`}
             >
               <div className="flex items-center gap-3">
                 {offer.icon}

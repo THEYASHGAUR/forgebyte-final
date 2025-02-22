@@ -8,7 +8,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="flex opacity-0 animate-[appearFromAbove_1s_ease-out_forwards] justify-between items-center sticky z-10 top-0 left-0  p-4 lg:px-16 bg-white shadow-md">
+    <header className="flex opacity-0 animate-[appearFromAbove_1s_ease-out_forwards] justify-between items-center sticky z-20 top-0 left-0  p-4 lg:px-16 bg-white shadow-md">
       {/* Logo */}
       <div className="text-3xl font-bold flex items-center">
         <a href="/">
