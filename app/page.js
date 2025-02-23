@@ -120,7 +120,7 @@ export default function Home() {
           <span className="font-bold text-2xl">3+</span> Clients </div>
         </div>
         <div className="lg:w-1/2 opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.3s] mt-10 lg:mt-0 flex  justify-center">
-        <Image src="/hero_img.png" width={500} height={500} alt="hero" /> </div> </section>
+        <Image src="/home_hero_img.svg" width={700} height={700} alt="hero" /> </div> </section>
 
       {/* ------------------------------images section-------------------------- */}
       <section className="mt-10">
@@ -266,7 +266,7 @@ export default function Home() {
       
 
       {/* mission and vision */}
-      <section ref={fifthSectionRef} id="fifth-section" className={`w-full flex flex-col items-center py-16 ${isFifthVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <section ref={fifthSectionRef} id="fifth-section" className={`w-full flex flex-col items-center py-16 px-6 ${isFifthVisible ? 'opacity-100' : 'opacity-0'}`}>
         <h2 className={`text-3xl sm:text-4xl font-bold text-gray-800 mb-10 ${isFifthVisible ? 'opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.2s]':''}`}>
           Mission and Vision
         </h2>

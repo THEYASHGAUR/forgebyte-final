@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import {
   FaLaptopCode,
   FaLightbulb,
@@ -50,56 +51,38 @@ const offerings = [
   },
 ];
 
-const WhatWeAreOffering = ({ ref, visible }) => {
+const WhatWeAreOffering = () => {
   return (
-    <section
-      ref={ref}
-      id="fourth-section"
-      className={`py-16 px-6 lg:px-20 text-center flex-col justify-center ${
-        visible ? 'opacity-100' : 'opacity-0'
-      }`}
-    >
+    <section className="py-16 px-6 lg:px-20 text-center flex-col justify-center">
       {/* Title Section */}
-      <h3
-        className={`text-lg text-gray-600 ${
-          visible
-            ? 'opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.2s]'
-            : ''
-        }`}
-      >
-        Services
-      </h3>
-      <h2
-        className={`text-3xl font-bold text-gray-900 mt-1 ${
-          visible
-            ? 'opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.3s]'
-            : ''
-        }`}
-      >
+      <h3 className="text-lg text-gray-600">Services</h3>
+      <h2 className="text-3xl font-bold text-gray-900 mt-1">
         What we are offering
       </h2>
 
       {/* Offerings Grid */}
-      <div className=" flex items-center justify-center">
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 container mx-auto">
-          {offerings.map((offer, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4 transition-all hover:shadow-2xl"
-            >
-              <div className="flex items-center gap-3">
-                {offer.icon}
-                <h3 className="text-lg font-semibold text-gray-800">
-                  {offer.title}
-                </h3>
-              </div>
-              <p className="text-gray-600">{offer.description}</p>
-              <div className="flex justify-end">
-                <ArrowRight className="text-gray-500 hover:text-gray-700 transition" />
-              </div>
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 container mx-auto">
+        {offerings.map((offer, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 50 }} // Start hidden and below
+            whileInView={{ opacity: 1, y: 0 }} // Animate when in view
+            viewport={{ once: true, amount: 0.2 }} // Ensures animation triggers only once
+            transition={{ duration: 1.2, delay: index * 0.2 }} // Smooth staggered animation
+            className="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4 transition-all hover:shadow-2xl"
+          >
+            <div className="flex items-center gap-3">
+              {offer.icon}
+              <h3 className="text-lg font-semibold text-gray-800">
+                {offer.title}
+              </h3>
             </div>
-          ))}
-        </div>
+            <p className="text-gray-600">{offer.description}</p>
+            <div className="flex justify-end">
+              <ArrowRight className="text-gray-500 hover:text-gray-700 transition" />
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
