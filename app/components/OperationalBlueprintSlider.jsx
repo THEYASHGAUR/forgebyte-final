@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const operationalBlueprint = [
   { id: 1, title: "Requirement Analysis", icon: "/services_requirement.png" },
@@ -14,8 +16,8 @@ const operationalBlueprint = [
 const OperationalBlueprintSlider = () => {
   const [startIndex, setStartIndex] = useState(0);
   const [itemsToShow, setItemsToShow] = useState(4);
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
-  // Adjust itemsToShow based on screen size
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) setItemsToShow(1);
@@ -23,16 +25,14 @@ const OperationalBlueprintSlider = () => {
       else setItemsToShow(4);
     };
 
-    handleResize(); // Initial check
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const prevOperation = () => {
     setStartIndex((prevIndex) =>
-      prevIndex === 0
-        ? operationalBlueprint.length - itemsToShow
-        : prevIndex - 1
+      prevIndex === 0 ? operationalBlueprint.length - itemsToShow : prevIndex - 1
     );
   };
 
@@ -43,8 +43,13 @@ const OperationalBlueprintSlider = () => {
   };
 
   return (
-    <section className="bg-white py-12">
-      <div className="flex flex-col items-center justify-center max-w-6xl mx-auto px-6 text-center">
+    <section ref={ref} className="bg-white py-12 overflow-hidden">
+      <motion.div
+        className="flex flex-col items-center justify-center max-w-6xl mx-auto px-6 text-center"
+        initial={{ opacity: 0, x: 100 }}
+        animate={inView ? { opacity: 1, x: 0 } : {}}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <h2 className="text-2xl text-[#1f2937] font-bold mb-6">
           The Operational Blueprint of Forgebyte
         </h2>
@@ -63,8 +68,14 @@ const OperationalBlueprintSlider = () => {
             <div className="flex overflow-hidden gap-6 px-6 sm:px-10">
               {operationalBlueprint
                 .slice(startIndex, startIndex + itemsToShow)
-                .map((item) => (
-                  <div key={item.id} className="flex flex-col items-center px-3">
+                .map((item, index) => (
+                  <motion.div
+                    key={item.id}
+                    className="flex flex-col items-center px-3"
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={inView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.5, delay: index * 0.2 }}
+                  >
                     <div className="w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center">
                       <Image
                         src={item.icon}
@@ -77,7 +88,7 @@ const OperationalBlueprintSlider = () => {
                     <p className="mt-4 font-semibold text-gray-900">
                       {item.title}
                     </p>
-                  </div>
+                  </motion.div>
                 ))}
             </div>
 
@@ -90,7 +101,7 @@ const OperationalBlueprintSlider = () => {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

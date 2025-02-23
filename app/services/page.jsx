@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import WhatWeAreOffering from '../components/WhatWeAreOffering';
@@ -9,6 +9,8 @@ import Footer from '../components/Footer';
 import Testimonials from '../components/Testimonials';
 import TopNotch from '../components/TopNotch';
 import OperationalBlueprintSlider from '../components/OperationalBlueprintSlider';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const images = ['/mobile 1.png', '/mobile 2.png'];
 
@@ -25,10 +27,9 @@ const industries = [
   },
 ];
 
-
 const Page = () => {
   const [index, setIndex] = useState(0);
-
+  const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.2 });
 
   // image slider
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -44,7 +45,7 @@ const Page = () => {
     <div>
       <div className="bg-gray-100 min-h-screen font-sans">
         <header className="bg-black text-white text-center py-36">
-          <h1 className="text-8xl font-bold">FORGEBYTE</h1>
+          <h1 className="text-3xl font-bold">FORGEBYTE</h1>
         </header>
 
         {/* turning vision into reality */}
@@ -70,21 +71,36 @@ const Page = () => {
         </section>
 
         {/* Operational blueprint Section */}
-        
+
         <OperationalBlueprintSlider />
 
         {/* mobile demos */}
-        <section className="flex flex-col items-center text-center px-6 lg:px-20 py-16">
+        <section
+          ref={ref}
+          className="flex flex-col items-center text-center px-6 lg:px-20 py-16"
+        >
           {/* Heading */}
-          <h2 className="text-2xl md:text-3xl font-bold">
+          <motion.h2
+            className="text-2xl md:text-3xl font-bold"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             We Are a House of Mobile App Development Services
-          </h2>
-          <p className="text-gray-600 mt-4 max-w-2xl">
+          </motion.h2>
+
+          {/* Paragraph */}
+          <motion.p
+            className="text-gray-600 mt-4 max-w-2xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             After delivering dozens of successful projects under our belt,
             ForgeByte is all set to offer tailor-made solutions to your business
             needs. With us, you can access the best-in-class mobile app
             development services and make your idea market-ready.
-          </p>
+          </motion.p>
 
           {/* Mobile App Image */}
           <div className="mt-8 flex justify-center">
