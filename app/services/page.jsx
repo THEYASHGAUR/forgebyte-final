@@ -155,7 +155,7 @@ const Page = () => {
         <TopNotch />
 
         {/* empowering serveral industries with our services  */}
-        <section className="w-full lg:flex md:flex sm:flex items-center justify-center py-16 gap-10">
+        <section className="w-full lg:flex md:flex sm:flex items-center justify-center py-16 px-4 gap-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
