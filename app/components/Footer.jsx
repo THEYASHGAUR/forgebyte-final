@@ -17,44 +17,30 @@ const Footer = () => {
       <div className="flex flex-wrap lg:flex-nowrap justify-between gap-6">
         {/* Contact Info */}
         <div className="w-full sm:w-auto">
-          <Image 
-          className='mb-4'
-           src="/logo_bg.png" alt="logo" height={100} width={200} />
-          <div className="flex items-center gap-2">
-            <FaEnvelope />
-            <a href="mailto:info@forgebytes.in" className="hover:underline">
-              info@forgebytes.in
-            </a>
-          </div>
-          <div className="flex items-center gap-2 mt-2">
-            <FaPhone />
-            <a href="tel:+919313693609" className="hover:underline">
-              +91 9319639609
-            </a>
-          </div>
-          <div className="flex items-center gap-2 mt-2">
-            {/* <FaMapMarkerAlt />  */}
-            {/* <p>123 Main Street, Anytown, USA, 2141</p> */}
-          </div>
+          <Image
+            className="mb-4"
+            src="/logo_bg.png"
+            alt="logo"
+            height={100}
+            width={200}
+          />
+
+          <div className="flex items-center gap-2 mt-2"></div>
         </div>
 
         {/* Menus - Stack on Mobile */}
-        <div className="flex flex-wrap sm:flex-nowrap gap-6 w-full sm:w-auto">
+        <div className="flex flex-wrap sm:flex-nowrap gap-x-40 w-full sm:w-auto">
           {/* Menu */}
           <div>
             <h2 className="text-xl font-semibold mb-4">Menu</h2>
             <ul className="space-y-2">
-              {[
-                'Home',
-                'About',
-                'Services',
-                'Testimonial',
-                'Contact',
-              ].map((item) => (
-                <li key={item} className="hover:underline cursor-pointer">
-                  {item}
-                </li>
-              ))}
+              {['Home', 'About', 'Services', 'Testimonial', 'Contact'].map(
+                (item) => (
+                  <li key={item} className="hover:underline cursor-pointer">
+                    {item}
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
@@ -89,16 +75,18 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between border-t-[1px] border-black mt-3">
-        <div className="flex justify-center space-x-4 mt-4">
+      <div className="flex items-center justify-between  border-t-[1px]  p-4 border-black mt-5">
+        <div className="flex justify-center space-x-4 ">
           <FaFacebook className="text-xl cursor-pointer hover:text-blue-400" />
           <FaTwitter className="text-xl cursor-pointer hover:text-blue-300" />
           <FaInstagram className="text-xl cursor-pointer hover:text-pink-400" />
           <FaLinkedin className="text-xl cursor-pointer hover:text-blue-500" />
         </div>
 
-        {/* Footer Bottom */}
-        <div className="mt-6 text-center text-sm">
+        <div className="flex items-center justify-center">
+          <p>@ForgeByte. All rights reserved.</p>
+        </div>
+        <div className=" text-center text-sm">
           <a href="mailto:info@forgebytes.in" className="hover:underline">
             info@forgebytes.in
           </a>

@@ -33,7 +33,7 @@ const Header = () => {
       </nav>
 
       {/* Contact Button (Always Visible) */}
-      <button className="hidden md:block bg-gradient-to-r from-blue-400 to-green-400 px-4 py-2 rounded-full text-white hover:opacity-90">
+      <button className="hidden md:block bg-gradient-to-r from-[#387397] to-[#A6EADA] px-4 py-2 rounded-full text-white hover:opacity-90">
         <Link href="/contactUs">Contact Us</Link>
       </button>
 
