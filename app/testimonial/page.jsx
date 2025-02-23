@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, {useEffect, useRef, useState} from 'react'
 import Footer from '../components/Footer'
 import { Star, ThumbsUp } from 'lucide-react'
@@ -51,7 +51,7 @@ const page = () => {
         <div className='absolute -left-[400px] size-[711px] rounded-full bg-gradient-to-t from-[#041F3F] via-[#103B5B] to-[#194F6F] blur-lg backdrop-blur-lg' />
         <div className='absolute hidden md:block -bottom-1/4 -right-1/4 size-[711px] rounded-full bg-gradient-to-t from-[#041F3F] via-[#103B5B] to-[#194F6F] blur-lg backdrop-blur-lg' />
         <div className='absolute hidden lg:block right-1/3 top-[10%] size-[136px] rounded-full bg-gradient-to-t from-[#041F3F] via-[#103B5B] to-[#194F6F] blur-lg backdrop-blur-lg' />
-        <div className='absolute opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.1s] flex flex-wrap justify-evenly items-center bottom-0 right-0 h-auto sm:h-[179px] w-3/4 sm:w-[500px] md:w-[720px] bg-white rounded-l-[40px] rounded-tr-[40px] p-4'>
+        <div className='absolute opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.1s] flex flex-wrap justify-evenly items-center bottom-4 right-4 h-auto sm:h-[179px] w-3/4 sm:w-[500px] md:w-[720px] bg-white rounded-[40px]  p-4'>
           {['Project Completed', 'World Wide Client', 'Awards Received', 'Clients Satisfaction'].map((item, index) => (
             <div key={index} className='text-center mb-4 sm:mb-0'>
               <h2 className='text-[#0a2b3e] font-semibold text-2xl sm:text-4xl'>150+</h2>
