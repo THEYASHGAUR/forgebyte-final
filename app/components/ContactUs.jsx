@@ -16,7 +16,7 @@ const ContactUs = () => {
     const [selectedOption, setSelectedOption] = useState(""); 
     const dropdownRef = useRef(null);
     
-    const options = ["Service 1", "Service 2", "Service 3", "Service 4", "Service 5"];
+    const options = ["Software Development", "IT Consulting", "Website Development", "UX/UI Design", "Mobile Development" , "SaaS App Development"];
     
     useEffect(() => {
         const handleClickOutside = (event) => {

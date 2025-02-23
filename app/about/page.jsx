@@ -40,7 +40,7 @@ const page = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }} // Triggers multiple times
           transition={{ duration: 1.5, delay: 0.3 }}
-          className="mt-6 text-lg max-w-3xl leading-relaxed"
+          className="mt-6 px-4 text-lg max-w-3xl leading-relaxed"
         >
           At Forgebyte, we ensure work quality, build a long-term relationship
           with clients and add more people to our list of happy customers. This
