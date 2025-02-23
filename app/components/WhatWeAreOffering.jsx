@@ -67,7 +67,7 @@ const WhatWeAreOffering = () => {
             key={index}
             initial={{ opacity: 0, y: 50 }} // Start hidden and below
             whileInView={{ opacity: 1, y: 0 }} // Animate when in view
-            viewport={{ once: true, amount: 0.2 }} // Ensures animation triggers only once
+            viewport={{ amount: 0.2 }} // Ensures animation triggers only once
             transition={{ duration: 1.2, delay: index * 0.2 }} // Smooth staggered animation
             className="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4 transition-all hover:shadow-2xl"
           >
