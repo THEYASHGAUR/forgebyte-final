@@ -75,7 +75,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between  border-t-[1px]  p-4 border-black mt-5">
+      <div className="lg:flex md:flex sm:flex gap-4 items-center justify-between  border-t-[1px]  p-4 border-black mt-5">
         <div className="flex justify-center space-x-4 ">
           <FaFacebook className="text-xl cursor-pointer hover:text-blue-400" />
           <FaTwitter className="text-xl cursor-pointer hover:text-blue-300" />
@@ -83,7 +83,7 @@ const Footer = () => {
           <FaLinkedin className="text-xl cursor-pointer hover:text-blue-500" />
         </div>
 
-        <div className="flex items-center justify-center">
+        <div className="flex my-4 sm:mt-0 items-center justify-center">
           <p>@ForgeByte. All rights reserved.</p>
         </div>
         <div className=" text-center text-sm">
