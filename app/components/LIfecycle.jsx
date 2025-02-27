@@ -1,13 +1,14 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const steps = [
-  { id: 1, title: 'Project Research', color: 'bg-blue-500' },
-  { id: 2, title: 'Wireframing', color: 'bg-yellow-500' },
-  { id: 3, title: 'Design & Development', color: 'bg-green-500' },
-  { id: 4, title: 'Testing', color: 'bg-red-500' },
-  { id: 5, title: 'Launch', color: 'bg-purple-500' },
-  { id: 6, title: 'Maintenance', color: 'bg-blue-500' },
+  { id: 1, title: 'Project Research', color: 'bg-blue-500' , img:'/project_research.svg' },
+  { id: 2, title: 'Wireframing', color: 'bg-yellow-500' , img:'/wireframe.svg' },
+  { id: 3, title: 'Design & Development', color: 'bg-green-500'  , img:'/dd.svg'},
+  { id: 4, title: 'Testing', color: 'bg-red-500' , img:'/testing_final.svg' },
+  { id: 5, title: 'Launch', color: 'bg-purple-500' , img:'/launch.svg' },
+  { id: 6, title: 'Maintenance', color: 'bg-blue-500' , img:'/maintenance.svg' },
 ];
 
 export default function WebDevLifecycle() {
@@ -58,7 +59,15 @@ export default function WebDevLifecycle() {
               </div>
 
               {/* Card */}
-              <div className="bg-white border-2 border-slate-700 shadow-lg  px-6 py-4 mt-4 h-auto sm:h-[200px] w-[150px] sm:w-[150px] md:w-[150px] flex items-center justify-center text-center">
+              <div className="flex-col bg-white border-2 border-slate-700 shadow-lg  px-6 py-4 mt-4 h-auto sm:h-[200px] w-[150px] sm:w-[150px] md:w-[150px] flex items-center justify-center text-center">
+                <span>
+                    <Image
+                    src={step.img}
+                    width={40}
+                    height={40}
+                    alt="img"
+                     />
+                </span>
                 <span className="text-gray-800 font-medium">{step.title}</span>
               </div>
 
