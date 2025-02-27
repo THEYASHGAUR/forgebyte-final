@@ -11,6 +11,7 @@ import TopNotch from '../components/TopNotch';
 import OperationalBlueprintSlider from '../components/OperationalBlueprintSlider';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import WebDevLifecycle from '../components/LIfecycle';
 
 const images = ['/mobile 1.png', '/mobile 2.png'];
 
@@ -99,7 +100,7 @@ const Page = () => {
 
         {/* Operational blueprint Section */}
 
-        <OperationalBlueprintSlider />
+        {/* <OperationalBlueprintSlider /> */}
 
         {/* mobile demos */}
         <section
@@ -150,6 +151,7 @@ const Page = () => {
             alt="development services lifecycle"
           />
         </div>
+        <WebDevLifecycle />
 
         {/* our services are top notch */}
         <TopNotch />

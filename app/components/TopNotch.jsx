@@ -12,7 +12,7 @@ const services = [
 
 const TopNotch = () => {
   return (
-    <section className="w-full flex flex-col items-center py-16">
+    <section className="w-full flex flex-col items-center py-16 px-4">
       {/* Title Animation */}
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
