@@ -59,7 +59,7 @@ export default function WebDevLifecycle() {
               </div>
 
               {/* Card */}
-              <div className="flex-col bg-white border-2 border-slate-700 shadow-lg  px-6 py-4 mt-4 h-auto sm:h-[200px] w-[150px] sm:w-[150px] md:w-[150px] flex items-center justify-center text-center">
+              <div className="flex-col bg-white border-2 border-slate-400 shadow-lg  px-6 py-4 mt-4 h-auto sm:h-[200px] w-[150px] sm:w-[150px] md:w-[150px] flex items-center justify-center text-center">
                 <span>
                     <Image
                     src={step.img}
