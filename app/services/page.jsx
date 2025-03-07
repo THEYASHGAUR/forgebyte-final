@@ -12,6 +12,7 @@ import OperationalBlueprintSlider from '../components/OperationalBlueprintSlider
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import WebDevLifecycle from '../components/LIfecycle';
+import Videos from '../components/Videos';
 
 const images = ['/mobile 1.png', '/mobile 2.png'];
 
@@ -42,13 +43,14 @@ const Page = () => {
 
     return () => clearInterval(interval); // Cleanup interval
   }, []);
-
   return (
     <div>
       <div className="bg-gray-100 min-h-screen font-sans">
-        <header className="bg-black text-white text-center py-36">
-          <h1 className="text-3xl font-bold">FORGEBYTE</h1>
-        </header>
+        <section className="h-[480px] relative overflow-hidden flex flex-col justify-center gap-y-4 items-center text-white">
+          <h1 className="text-3xl font-bold z-10">FORGEBYTE</h1>
+          <Videos src={'/web-dev.mp4'} />
+          <div className="absolute inset-0 bg-black opacity-70"></div>
+        </section>
 
         {/* turning vision into reality */}
         <section className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-8">
