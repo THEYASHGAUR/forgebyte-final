@@ -145,14 +145,7 @@ const Page = () => {
         <WhatWeAreOffering />
 
         {/* development lifecycle */}
-        <div className="flex items-center justify-center p-3">
-          <Image
-            src="/dev_lifecycle.png"
-            height={1000}
-            width={1000}
-            alt="development services lifecycle"
-          />
-        </div>
+        
         <WebDevLifecycle />
 
         {/* our services are top notch */}
