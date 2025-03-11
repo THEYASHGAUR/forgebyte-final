@@ -169,7 +169,7 @@ const page = () => {
       </section>
 
       {/* team section */}
-      <TeamSection />
+      {/* <TeamSection /> */}
 
       <Footer />
     </>
