@@ -41,7 +41,7 @@ const ContactUs = () => {
                         <h3 className='text-sm font-bold'>Customer Support</h3>
                     </div>
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-2 text-center lg:text-left'>
-                        <p className='text-[#5F5F5F] text-sm'>info@forgebytes.in</p>
+                        <p className='text-[#5F5F5F] text-sm'>forgebytesolutions@gmail.com</p>
                         <p className='text-[#5F5F5F] text-sm'>+91 9319639609</p>
                     </div>
                 </div>

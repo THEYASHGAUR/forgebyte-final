@@ -88,7 +88,7 @@ const Footer = () => {
         </div>
         <div className=" text-center text-sm">
           <a href="mailto:info@forgebytes.in" className="hover:underline">
-            info@forgebytes.in
+          forgebytesolutions@gmail.com
           </a>
         </div>
       </div>
