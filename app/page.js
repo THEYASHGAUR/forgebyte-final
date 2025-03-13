@@ -4,36 +4,45 @@ import Image from 'next/image';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import WhatWeAreOffering from './components/WhatWeAreOffering';
-import Testimonials from './components/Testimonials';
-import { useState, useEffect, useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect, useRef } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const testimonials = [
   {
     quote:
-      "Our journey from beginnings to breakthroughs has been fueled by innovation, dedication, and an unyielding commitment to excellence.",
-    author: "Trexo",
-    image: "/trexo_updated.png",
-
+      'Our journey from beginnings to breakthroughs has been fueled by innovation, dedication, and an unyielding commitment to excellence.',
+    author: 'Trexo',
+    image: '/trexo_updated.png',
   },
   {
     quote:
-      "Working with Forgebyte was a game-changer. Their expertise and commitment helped us scale rapidly and efficiently.",
-    author: "Yoom",
-    image:"/yoom_updated.png"
+      'Working with Forgebyte was a game-changer. Their expertise and commitment helped us scale rapidly and efficiently.',
+    author: 'Yoom',
+    image: '/yoom_updated.png',
   },
   {
     quote:
-      "Working with Forgebyte was a game-changer. Their expertise and commitment helped us scale rapidly and efficiently.",
-    author: "Fleetrr",
-    image:"/fleetr_enhanced.png"
+      'Working with Forgebyte was a game-changer. Their expertise and commitment helped us scale rapidly and efficiently.',
+    author: 'Fleetrr',
+    image: '/fleetr_enhanced.png',
+  },
+  {
+    quote:
+      'everything perfect, he accomplished all features very well and even faster than the timeplan. defenitily recommend forgebyte solutions for development ---- music room ka hai review',
+    author: 'Music Room',
+    image: '/music_room.jpg',
+  },
+  {
+    quote:
+      'everything perfect, he accomplished all features very well and even faster than the timeplan. defenitily recommend forgebyte solutions for development ---- music room ka hai review',
+    author: 'Zinikus',
+    image: '/zinikus.jpg',
   },
 ];
 
-const images = ["/mobile 1.png", "/mobile 2.png"]; 
+const images = ['/mobile 1.png', '/mobile 2.png'];
 
 export default function Home() {
-
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const secondSectionRef = useRef(null);
   const thirdSectionRef = useRef(null);
@@ -45,7 +54,6 @@ export default function Home() {
   const [isThirdVisible, setIsThirdVisible] = useState(false);
   const [isFourthVisible, setIsFourthVisible] = useState(false);
   const [isFifthVisible, setIsFifthVisible] = useState(false);
-
 
   // Intersection Observer logic
   useEffect(() => {
@@ -69,7 +77,10 @@ export default function Home() {
       threshold: 0,
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
     const secondSectionElement = secondSectionRef.current;
     const thirdSectionElement = thirdSectionRef.current;
     const fourthSectionElement = fourthSectionRef.current;
@@ -101,11 +112,15 @@ export default function Home() {
   const [index, setIndex] = useState(0);
 
   const prevTestimonial = () => {
-    setIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1));
+    setIndex((prevIndex) =>
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    );
   };
 
   const nextTestimonial = () => {
-    setIndex((prevIndex) => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1));
+    setIndex((prevIndex) =>
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   return (
@@ -113,14 +128,28 @@ export default function Home() {
       {/*--------------------- hero section -------------------------- */}
       <section className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-20 py-12 bg-[#f8f6f6]">
         <div className="lg:w-1/2 text-center lg:text-left">
-        <h1 className="text-3xl opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] lg:text-5xl font-bold text-gray-900"> We Don’t Just Go Big –{' '} <span className="text-black">We Go Beyond.</span> </h1>
-        <p className="mt-4 opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.2s] text-gray-600"> Our journey from beginnings to breakthroughs has been fueled by innovation, dedication, and an unyielding commitment to excellence. </p>
-        <button className="mt-6 opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.4s] bg-white shadow-md border px-6 py-2 rounded-lg text-gray-800 hover:bg-gray-100"> Explore </button>
-        <div className="mt-6 opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.5s] text-gray-700">
-          <span className="font-bold text-2xl">3+</span> Clients </div>
+          <h1 className="text-3xl opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] lg:text-5xl font-bold text-gray-900">
+            {' '}
+            We Don’t Just Go Big –{' '}
+            <span className="text-black">We Go Beyond.</span>{' '}
+          </h1>
+          <p className="mt-4 opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.2s] text-gray-600">
+            {' '}
+            Our journey from beginnings to breakthroughs has been fueled by
+            innovation, dedication, and an unyielding commitment to excellence.{' '}
+          </p>
+          <button className="mt-6 opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.4s] bg-white shadow-md border px-6 py-2 rounded-lg text-gray-800 hover:bg-gray-100">
+            {' '}
+            Explore{' '}
+          </button>
+          <div className="mt-6 opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.5s] text-gray-700">
+            <span className="font-bold text-2xl">3+</span> Clients{' '}
+          </div>
         </div>
         <div className="lg:w-1/2 opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.3s] mt-10 lg:mt-0 flex  justify-center">
-        <Image src="/home_hero_img.svg" width={700} height={700} alt="hero" /> </div> </section>
+          <Image src="/home_hero_img.svg" width={700} height={700} alt="hero" />{' '}
+        </div>{' '}
+      </section>
 
       {/* ------------------------------images section-------------------------- */}
       <section className="mt-10">
@@ -157,13 +186,14 @@ export default function Home() {
           <div className="flex space-x-5 overflow-x-auto no-scrollbar scroll-container">
             <div className="flex-none border border-gray-300 p-5 rounded-lg  transition-transform duration-300 ease-in-out transform hover:scale-110 hover:shadow-lg scroll-item">
               <Image
-                src="/trexo_updated.png"
-                alt="Trexo Template"
+                src="/fleetr_enhanced.png"
+                alt="Third Template"
                 width={450}
                 height={350}
-                className="rounded-lg  h-auto"
+                className="rounded-lg h-auto"
               />
             </div>
+
             <div className="flex-none border border-gray-300 p-5 rounded-lg  transition-transform duration-300 ease-in-out transform hover:scale-110 hover:shadow-lg scroll-item">
               <Image
                 src="/yoom_updated.png"
@@ -175,10 +205,29 @@ export default function Home() {
             </div>
             <div className="flex-none border border-gray-300 p-5 rounded-lg  transition-transform duration-300 ease-in-out transform hover:scale-110 hover:shadow-lg scroll-item">
               <Image
-                src="/fleetr_enhanced.png"
+                src="/trexo_updated.png"
+                alt="Trexo Template"
+                width={450}
+                height={350}
+                className="rounded-lg  h-auto"
+              />
+            </div>
+
+            <div className="flex-none border border-gray-300 p-5 rounded-lg  transition-transform duration-300 ease-in-out transform hover:scale-110 hover:shadow-lg scroll-item">
+              <Image
+                src="/music_room.jpg"
                 alt="Third Template"
                 width={450}
                 height={350}
+                className="rounded-lg h-auto"
+              />
+            </div>
+            <div className="flex-none border border-gray-300 p-5 rounded-lg  transition-transform duration-300 ease-in-out transform hover:scale-110 hover:shadow-lg scroll-item">
+              <Image
+                src="/zinikus.jpg"
+                alt="Third Template"
+                width={450}
+                height={200}
                 className="rounded-lg h-auto"
               />
             </div>
@@ -187,9 +236,21 @@ export default function Home() {
       </section>
 
       {/* included section */}
-      <section ref={secondSectionRef} id="second-section" className={`flex flex-col md:flex-row items-center justify-center gap-10 px-6 lg:px-20 py-16 ${isSecondVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <section
+        ref={secondSectionRef}
+        id="second-section"
+        className={`flex flex-col md:flex-row items-center justify-center gap-10 px-6 lg:px-20 py-16 ${
+          isSecondVisible ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
         {/* Left Side - Image */}
-        <div className={`w-full md:w-1/2 flex justify-center ${isSecondVisible ? 'inline-block opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.2s]' : ''}`}>
+        <div
+          className={`w-full md:w-1/2 flex justify-center ${
+            isSecondVisible
+              ? 'inline-block opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.2s]'
+              : ''
+          }`}
+        >
           <img
             src="/laptop.png"
             alt="Laptop and Mobile Illustration"
@@ -198,7 +259,13 @@ export default function Home() {
         </div>
 
         {/* Right Side - Content */}
-        <div className={`w-full md:w-1/2 text-center md:text-left ${isSecondVisible ? 'inline-block opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.2s]' : ''}`}>
+        <div
+          className={`w-full md:w-1/2 text-center md:text-left ${
+            isSecondVisible
+              ? 'inline-block opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.2s]'
+              : ''
+          }`}
+        >
           <h2 className="text-3xl md:text-4xl font-semibold">
             Included in <span className="text-blue-600">ForgeByte</span>
           </h2>
@@ -219,61 +286,99 @@ export default function Home() {
         </div> */}
       </section>
 
-      
-
       {/* we have worked on various projects */}
-      <section ref={thirdSectionRef} id="third-section" className={`max-w-6xl mx-auto px-6 py-12 ${isThirdVisible ? 'opacity-100' : 'opacity-0'}`}>
-          <h2 className={`text-5xl font-bold text-center mb-6 ${isThirdVisible? "opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.2s]": ""}`}>
-            We have worked on various Projects
-          </h2>
-          <div className={`flex p-10 w-full h-auto ${isThirdVisible? "opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.3s]":""}`}>
-            <div className="bg-[#0a2539] text-white p-14  w-[400px] h-[400px]">
-              <h2 className="text-2xl font-bold mb-4">What our clients say about the projects</h2>
-              <p className="text-gray-300">{testimonials[index].quote}</p>
-              <p className="font-bold mt-2">~ {testimonials[index].author}</p>
+      <section
+        ref={thirdSectionRef}
+        id="third-section"
+        className={`max-w-6xl mx-auto px-6 py-12 ${
+          isThirdVisible ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
+        <h2
+          className={`text-5xl font-bold text-center mb-6 ${
+            isThirdVisible
+              ? 'opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.2s]'
+              : ''
+          }`}
+        >
+          We have worked on various Projects
+        </h2>
+        <div
+          className={`flex flex-col md:flex-row items-center md:items-start p-4 md:p-10 w-full h-auto ${
+            isThirdVisible
+              ? 'opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.3s]'
+              : ''
+          }`}
+        >
+          <div className="bg-[#0a2539] text-white p-6 md:p-14 w-full md:w-[400px] h-auto md:h-[400px]">
+            <h2 className="text-2xl font-bold mb-4 text-center md:text-left">
+              What our clients say about the projects
+            </h2>
+            <p className="text-gray-300 text-center md:text-left">
+              {testimonials[index].quote}
+            </p>
+            <p className="font-bold mt-2 text-center md:text-left">
+              ~ {testimonials[index].author}
+            </p>
 
-              <div className="mt-4 flex justify-center gap-4">
-                <button
-                  onClick={prevTestimonial}
-                  className="p-2 border rounded-full hover:bg-white hover:text-black transition"
-                >
-                  <ChevronLeft />
-                </button>
-                <button
-                  onClick={nextTestimonial}
-                  className="p-2 border rounded-full hover:bg-white hover:text-black transition"
-                >
-                  <ChevronRight />
-                </button>
-              </div>
-            </div>
-
-            <div>
-              <Image
-                 src={testimonials[index].image}
-                 height={650}
-                 width={650}
-                 alt={testimonials[index].author}
-                 className="rounded-lg shadow-lg transition-all duration-500"
-              />
+            <div className="mt-4 flex justify-center md:justify-start gap-4">
+              <button
+                onClick={prevTestimonial}
+                className="p-2 border rounded-full hover:bg-white hover:text-black transition"
+              >
+                <ChevronLeft />
+              </button>
+              <button
+                onClick={nextTestimonial}
+                className="p-2 border rounded-full hover:bg-white hover:text-black transition"
+              >
+                <ChevronRight />
+              </button>
             </div>
           </div>
-        </section>
+
+          <div className="mt-6 md:mt-0">
+            <Image
+              src={testimonials[index].image}
+              height={650}
+              width={650}
+              alt={testimonials[index].author}
+              className="rounded-lg shadow-lg transition-all duration-500 w-full md:w-auto"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* what we are offering */}
       <WhatWeAreOffering ref={fourthSectionRef} visible={isFourthVisible} />
 
-      
-
       {/* mission and vision */}
-      <section ref={fifthSectionRef} id="fifth-section" className={`w-full flex flex-col items-center py-16 px-6 ${isFifthVisible ? 'opacity-100' : 'opacity-0'}`}>
-        <h2 className={`text-3xl sm:text-4xl font-bold text-gray-800 mb-10 ${isFifthVisible ? 'opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.2s]':''}`}>
+      <section
+        ref={fifthSectionRef}
+        id="fifth-section"
+        className={`w-full flex flex-col items-center py-16 px-6 ${
+          isFifthVisible ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
+        <h2
+          className={`text-3xl sm:text-4xl font-bold text-gray-800 mb-10 ${
+            isFifthVisible
+              ? 'opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.2s]'
+              : ''
+          }`}
+        >
           Mission and Vision
         </h2>
 
         <div className="flex flex-col md:flex-row items-center gap-8 max-w-5xl">
           {/* Left Side - Image */}
-          <div className={`w-full md:w-1/2 ${isFifthVisible? 'opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.3s]':''}`}>
+          <div
+            className={`w-full md:w-1/2 ${
+              isFifthVisible
+                ? 'opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.3s]'
+                : ''
+            }`}
+          >
             <img
               src="/missionVision.png"
               alt="Team working"
@@ -283,7 +388,13 @@ export default function Home() {
 
           {/* Right Side - Mission & Vision */}
           <div className="w-full md:w-1/2 flex flex-col gap-6">
-            <div className={`bg-gray-100 p-5 rounded-lg shadow-md ${isFifthVisible?'opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.3s]':''}`}>
+            <div
+              className={`bg-gray-100 p-5 rounded-lg shadow-md ${
+                isFifthVisible
+                  ? 'opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.3s]'
+                  : ''
+              }`}
+            >
               <h3 className="text-xl font-semibold text-gray-900">
                 Our Mission
               </h3>
@@ -294,7 +405,13 @@ export default function Home() {
               </p>
             </div>
 
-            <div className={`bg-gray-100 p-5 rounded-lg shadow-md ${isFifthVisible?'opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.4s]':''}`}>
+            <div
+              className={`bg-gray-100 p-5 rounded-lg shadow-md ${
+                isFifthVisible
+                  ? 'opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.4s]'
+                  : ''
+              }`}
+            >
               <h3 className="text-xl font-semibold text-gray-900">
                 Our Vision
               </h3>
