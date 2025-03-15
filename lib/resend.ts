@@ -9,7 +9,7 @@ export const sendEmail = async ({updatedFormData}) => {
     try {
         const response = await resend.emails.send({
             to: "forgebytesolutions@gmail.com",
-            from: "Yash Gaur <onboarding@resend.dev>",
+            from: "Forgebyte Inquiry <onboarding@resend.dev>",
             subject: "Forgebyte Customer Queries",
             html: `
                 <h1>New Contact Inquiry</h1>
