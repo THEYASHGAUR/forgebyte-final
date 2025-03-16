@@ -51,14 +51,14 @@ const page = () => {
         <div className='absolute -left-[400px] size-[711px] rounded-full bg-gradient-to-t from-[#041F3F] via-[#103B5B] to-[#194F6F] blur-lg backdrop-blur-lg' />
         <div className='absolute hidden md:block -bottom-1/4 -right-1/4 size-[711px] rounded-full bg-gradient-to-t from-[#041F3F] via-[#103B5B] to-[#194F6F] blur-lg backdrop-blur-lg' />
         <div className='absolute hidden lg:block right-1/3 top-[10%] size-[136px] rounded-full bg-gradient-to-t from-[#041F3F] via-[#103B5B] to-[#194F6F] blur-lg backdrop-blur-lg' />
-        <div className='absolute opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.1s] flex flex-wrap justify-evenly items-center bottom-4 right-4 h-auto sm:h-[179px] w-3/4 sm:w-[500px] md:w-[720px] bg-white rounded-[40px]  p-4'>
+        {/* <div className='absolute opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.1s] flex flex-wrap justify-evenly items-center bottom-4 right-4 h-auto sm:h-[179px] w-3/4 sm:w-[500px] md:w-[720px] bg-white rounded-[40px]  p-4'>
           {['Project Completed', 'World Wide Client', 'Awards Received', 'Clients Satisfaction'].map((item, index) => (
             <div key={index} className='text-center mb-4 sm:mb-0'>
               <h2 className='text-[#0a2b3e] font-semibold text-2xl sm:text-4xl'>150+</h2>
               <p className='text-sm sm:text-base'>{item.split(' ').map((word, indexs) => <span key={indexs}>{word}<br/></span>)}</p>
             </div>
           ))}
-        </div>
+        </div> */}
         <h1 className={`text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold z-20 mt-8 sm:mt-0 opacity-0 animate-[appearFromBelow_1s_ease-out_forwards]`}>Journey of Innovation<br/>and Excellence</h1>
         <p className='text-white z-20 text-base sm:text-lg md:text-xl w-full sm:w-10/12 md:w-8/12 lg:w-7/12 opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.1s]'>Our journey from beginnings to breakthroughs has been fueled by innovation, dedication, and an unyielding commitment to excellence</p>
       </section>
@@ -80,7 +80,8 @@ const page = () => {
           {[
             { name: 'Yoom', role: 'Founder', text: 'Website design did exactly what you said it does. Just what I was looking for. Nice work on your website design.' },
             { name: 'Fleetr', role: 'Founder and CEO', text: 'Dude, your stuff is the bomb! House rent is the real deal! I STRONGLY recommend house rent to EVERYONE interested in running a successful online business!' },
-            { name: 'Trexo', role: 'Founder', text: 'Since I invested in software I made over 100,000 dollars profits. The service was excellent. I wish I would have thought of it first.' }
+            { name: 'Trexo', role: 'Founder', text: 'Since I invested in software I made over 100,000 dollars profits. The service was excellent. I wish I would have thought of it first.' },
+            { name: 'Music Room', role: 'Founder', text: 'everything perfect, he accomplished all features very well and even faster than the timeplan. defenitily recommend forgebyte solutions for development ---- music room ka hai review' }
           ].map((testimonial, index) => (
             <div key={index} className={`w-[320px] flex flex-col justify-center bg-white [box-shadow:_0px_28.93px_61.56px_0px_#15151540;] ${index%2!=0?'gap-y-8 p-10 h-[361.55px]':'gap-y-6 sm:gap-y-8 p-6 sm:p-10 h-auto sm:h-[313.55px]'}  ${isThirdVisible ? `opacity-0 animate-[appearFromBelow_1s_ease-out_forwards] [animation-delay:0.${index + 1}s]`:'opacity-0'}`}>
               <div className='flex justify-between items-center'>

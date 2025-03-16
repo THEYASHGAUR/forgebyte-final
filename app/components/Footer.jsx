@@ -65,7 +65,7 @@ const Footer = () => {
           <div>
             <h2 className="text-xl font-semibold mb-4">Other Pages</h2>
             <ul className="space-y-2">
-              {['Licenses', 'Policy'].map((page) => (
+              {['Policy'].map((page) => (
                 <li key={page} className="hover:underline cursor-pointer">
                   {page}
                 </li>
@@ -77,14 +77,14 @@ const Footer = () => {
 
       <div className="lg:flex md:flex sm:flex gap-4 items-center justify-between  border-t-[1px]  p-4 border-black mt-5">
         <div className="flex justify-center space-x-4 ">
-          <FaFacebook className="text-xl cursor-pointer hover:text-blue-400" />
+          {/* <FaFacebook className="text-xl cursor-pointer hover:text-blue-400" /> */}
           <FaTwitter className="text-xl cursor-pointer hover:text-blue-300" />
           <FaInstagram className="text-xl cursor-pointer hover:text-pink-400" />
           <FaLinkedin className="text-xl cursor-pointer hover:text-blue-500" />
         </div>
 
         <div className="flex my-4 sm:mt-0 items-center justify-center">
-          <p>@ForgeByte. All rights reserved.</p>
+          <p>@ForgeByteSolutions. All rights reserved.2025</p>
         </div>
         <div className=" text-center text-sm">
           <a href="mailto:info@forgebytes.in" className="hover:underline">
